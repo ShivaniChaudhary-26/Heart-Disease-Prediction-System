@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Heart Disease Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+    <!-- <script src="{{ url_for('static', filename='validate.js') }}" defer></script> -->
+</head>
+<body>
+    <div class="container">
+        <h1>Heart Disease Prediction</h1>
+        <form method="POST" onsubmit="return validateForm();">
+
+            <!-- Age -->
+            <label for="age">Age (29 - 77):</label>
+            <input type="number" id="age" name="age" min="29" max="77" step="1" required />
+
+            <!-- Resting Blood Pressure -->
+            <label for="trestbps">Resting Blood Pressure (94 - 200):</label>
+            <input type="number" id="trestbps" name="trestbps" min="94" max="200" step="1" required />
+
+            <!-- Cholesterol -->
+            <label for="chol">Cholesterol (126 - 564):</label>
+            <input type="number" id="chol" name="chol" min="126" max="564" step="1" required />
+
+            <!-- Max Heart Rate -->
+            <label for="thalach">Max Heart Rate Achieved (71 - 202):</label>
+            <input type="number" id="thalach" name="thalach" min="71" max="202" step="1" required />
+
+            <!-- ST Depression -->
+            <label for="oldpeak">ST Depression (Oldpeak) (0.0 - 6.2):</label>
+            <input type="number" id="oldpeak" name="oldpeak" min="0" max="6.2" step="0.1" required />
+
+            <!-- Sex -->
+            <label for="sex">Sex:</label>
+            <select id="sex" name="sex" required>
+                <option value="" disabled selected>Select Sex</option>
+                <option value="sex_0">Female</option>
+                <option value="sex_1">Male</option>
+            </select>
+
+            <!-- Chest Pain Type -->
+            <label for="cp">Chest Pain Type:</label>
+            <select id="cp" name="cp" required>
+                <option value="" disabled selected>Select Chest Pain Type</option>
+                <option value="cp_0">cp_0</option>
+                <option value="cp_1">cp_1</option>
+                <option value="cp_2">cp_2</option>
+                <option value="cp_3">cp_3</option>
+            </select>
+            <!-- Fasting Blood Sugar -->
+            <label for="fbs">Fasting Blood Sugar > 120 mg/dl:</label>
+            <select id="fbs" name="fbs" required>
+                <option value="" disabled selected>Select Fasting Blood Sugar</option>
+                <option value="fbs_0">No</option>
+                <option value="fbs_1">Yes</option>
+            </select>
+            
+            <!-- Resting ECG -->
+            <label for="restecg">Resting ECG Results:</label>
+            <select id="restecg" name="restecg" required>
+                <option value="" disabled selected>Select Resting ECG</option>
+                <option value="restecg_0">restecg_0</option>
+                <option value="restecg_1">restecg_1</option>
+                <option value="restecg_2">restecg_2</option>
+            </select>
+            
+            <!-- Exercise Induced Angina -->
+            <label for="exang">Exercise Induced Angina:</label>
+            <select id="exang" name="exang" required>
+                <option value="" disabled selected>Select Exercise Induced Angina</option>
+                <option value="exang_0">No</option>
+                <option value="exang_1">Yes</option>
+            </select>
+            
+            <!-- Slope -->
+            <label for="slope">Slope of ST Segment:</label>
+            <select id="slope" name="slope" required>
+                <option value="" disabled selected>Select Slope</option>
+                <option value="slope_0">slope_0</option>
+                <option value="slope_1">slope_1</option>
+                <option value="slope_2">slope_2</option>
+            </select>
+            
+            <!-- Number of Major Vessels -->
+            <label for="ca">Number of Major Vessels (0 - 4):</label>
+            <select id="ca" name="ca" required>
+                <option value="" disabled selected>Select Number of Major Vessels</option>
+                <option value="ca_0">0</option>
+                <option value="ca_1">1</option>
+                <option value="ca_2">2</option>
+                <option value="ca_3">3</option>
+                <option value="ca_4">4</option>
+            </select>
+            
+            <!-- Thalassemia -->
+            <label for="thal">Thalassemia Type:</label>
+            <select id="thal" name="thal" required>
+                <option value="" disabled selected>Select Thalassemia Type</option>
+                <option value="thal_0">thal_0</option>
+                <option value="thal_1">thal_1</option>
+                <option value="thal_2">thal_2</option>
+                <option value="thal_3">thal_3</option>
+            </select>
+
+
+
+
+
+            <button type="submit">Predict</button>
+        </form>
+
+        {% if prediction is not none %}
+            <div class="result">
+                <h2>Prediction: {{ prediction }}</h2>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
