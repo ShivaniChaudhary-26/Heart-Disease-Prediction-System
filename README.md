@@ -4,9 +4,9 @@ This project uses a trained machine learning model to analyze medical features a
  # Featues
 1. 🩺 Predict the presence of heart disease
 2. 📊 Input medical parameters via a web form
-🔍 View prediction results instantly
-💾 Trained ML model (Logistic Regression / Random Forest / SVM)
-🌐 Interactive UI using Flask or Streamlit
+- 🔍 View prediction results instantly
+- 💾 Trained ML model (Logistic Regression / Random Forest / SVM)
+- 🌐 Interactive UI using Flask or Streamlit
 
 # Technologies Used
 Python
