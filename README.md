@@ -9,9 +9,9 @@ This project uses a trained machine learning model to analyze medical features a
 - 🌐 Interactive UI using Flask or Streamlit
 
 # Technologies Used
--Python
--Scikit-learn – ML model training and evaluation
--Pandas & NumPy – Data preprocessing
--Matplotlib & Seaborn – Data visualization (optional)
--Flask or Streamlit – Web app interface
--HTML/CSS – Frontend design
+- Python
+- Scikit-learn – ML model training and evaluation
+- Pandas & NumPy – Data preprocessing
+- Matplotlib & Seaborn – Data visualization (optional)
+- Flask or Streamlit – Web app interface
+- HTML/CSS – Frontend design
